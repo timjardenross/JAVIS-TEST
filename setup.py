@@ -1,8 +1,9 @@
 import subprocess
 import sys
 
-print("Installing requirements...")
-subprocess.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"], check=True)
+req_file = "requirements-mac.txt" if sys.platform == "darwin" else "requirements.txt"
+print(f"Installing requirements from {req_file}...")
+subprocess.run([sys.executable, "-m", "pip", "install", "-r", req_file], check=True)
 
 print("Installing Playwright browsers...")
 subprocess.run([sys.executable, "-m", "playwright", "install"], check=True)

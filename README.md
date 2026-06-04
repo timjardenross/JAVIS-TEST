@@ -43,12 +43,15 @@ It's not just an assistant — it's an extension of your digital life.
 ```bash
 git clone https://github.com/FatihMakes/Mark-XXXIX.git
 cd Mark-XXXIX
+# On macOS:
+pip install -r requirements-mac.txt
+# On Windows/Linux:
 pip install -r requirements.txt
 playwright install
 python main.py
 ```
 
-> ⚠️ **Installation Note:** To keep the repository lightweight, some OS-specific dependencies are not bundled in `requirements.txt`. If you run into a `ModuleNotFoundError`, simply install the missing package via `pip install <module_name>` for your specific system.
+> ⚠️ **Installation Note:** `requirements.txt` contains some Windows-only packages. On macOS, use `requirements-mac.txt` instead. If you still hit `ModuleNotFoundError`, install the missing module via `pip install <module_name>` for your system.
 
 ---
 
